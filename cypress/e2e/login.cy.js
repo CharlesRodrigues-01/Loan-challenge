@@ -4,11 +4,11 @@ describe('login', () => {
   beforeEach(() => {
     cy.visit('/');
   });
-//   it('should redirect to the logged in page successfully', () => {
-//     cy.fillInLoginInformation(Cypress.env('validCpf'))
-//     cy.get('.text-header').should('be.visible')
-//     .and('have.text', 'teste')
-//   })
+  it('should redirect to the logged in page successfully', () => {
+    cy.fillInLoginInformation(Cypress.env('validCpf'))
+    cy.get('.text-header').should('be.visible')
+    .and('have.text', 'Gerencie seus contratos')
+  })
   it('should validate invalid cpf', () => {
     cy.fillInLoginInformation(Cypress.env('invalidCpf'))
     cy.get('#mat-mdc-error-0').should('be.visible')
